@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1f3bf4e-0db2-4aa0-a400-acd2d689a3ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Classes/AwesomeClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Classes/Resizer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Classes/Uploader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Classes/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -233,7 +237,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554391790871</updated>
-      <workItem from="1554391793657" duration="6195000" />
+      <workItem from="1554391793657" duration="6607000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1554402361228</created>
@@ -246,14 +250,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6195000" />
+    <option name="totallyTimeSpent" value="6607000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="422" y="390" width="1394" height="720" extended-state="0" />
+    <frame x="428" y="120" width="1394" height="720" extended-state="0" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -262,7 +266,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32879046" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32879046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
