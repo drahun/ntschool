@@ -12,5 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
+});
+
+/**
+ * Routes for register and login
+ */
+Route::get('/register', 'AuthController@register')->name('registerform');
+Route::post('/register', 'AuthController@registerPost')->name('registerPost');
+Route::get('/login', 'AuthController@login')->name('login');
+Route::post('/login', 'AuthController@loginPost')->name('loginPost');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
+
+Route::resource('/post', 'PostController');
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['namespace' => 'Admin','prefix' => '\admin'], function(){
+    // админ
 });

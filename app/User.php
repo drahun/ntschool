@@ -1,39 +1,40 @@
 <?php
 
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable{
     use Notifiable;
+    protected $hidden = ['password', 'remember_token',];
+    protected $guarded = ['id','created_at','updated_at'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $casts = ['email_verified_at' => 'datetime',];
+	
+    // связи
+    public function posts(){
+        // один user м создавать множество статей
+        return $this->hasMany(Post::class);
+    }
+    public function comments(){
+        // один user м создавать множество коментов
+        return $this->hasMany(Comment::class);
+    }
+    public function role(){// роли
+        return $this->hasOne(Role::class);
+    }
+    public function owns($related){
+        return $this->id == $related->user_id;
+    }
+    public function isAdmin(){
+        return $this->role_id === 1;
+    }
+    public function deleteWithArticles(){
+        $this->articles()->each(function($article){
+            $article->deleteWithComments();
+        });
+        return $this->delete();
+    }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }
