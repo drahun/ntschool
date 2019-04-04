@@ -2,24 +2,24 @@
 
 use Illuminate\Database\Seeder;
 use App\Category;
-
+use Illuminate\Support\Str;
 class CategoriesTableSeeder extends Seeder{
     public function run(){
         Category::create([
             'name' => 'Общее',
-            'slug' => str_slug('Общее', '-')
+            'slug' => Str::slug('Общее', '-')
         ]);
         Category::create([
             'name' => 'Разработка',
-            'slug' => str_slug('Разработка', '-')
+            'slug' => Str::slug('Разработка', '-')
         ]);
         Category::create([
             'name' => 'Квесты',
-            'slug' => str_slug('Квесты', '-')
+            'slug' => Str::slug('Квесты', '-')
         ]);
         Category::create([
             'name' => 'Путешествия',
-            'slug' => str_slug('Путешествия', '-')
+            'slug' => Str::slug('Путешествия', '-')
         ]);
     }
 }

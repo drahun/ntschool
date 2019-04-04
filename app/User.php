@@ -9,7 +9,6 @@ class User extends Authenticatable{
     use Notifiable;
     protected $hidden = ['password', 'remember_token',];
     protected $guarded = ['id','created_at','updated_at'];
-
     protected $casts = ['email_verified_at' => 'datetime',];
 	
     // связи
