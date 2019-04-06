@@ -34,17 +34,16 @@ class PostController extends Controller{
         $posts = Post::all();
         $page ='pages.all';
 
-
+// передаём модель и в пер.$page- подгружаемый вид
         return view('layouts.two-column',
             compact('posts','title','page'));
-
     }
 
     public function show($slug){
         $post = Post::where('slug',$slug)->firstOrFail();
 
         $page ='pages.post';
-        return view('layouts.two-column',
+        return view('layouts.one-column',
             compact('post','title','page'));
     }
 }

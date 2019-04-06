@@ -27,7 +27,7 @@
                     </li>
 
 
-				<!-- форма входа-->
+				<!-- форма входа для гостей ссылки для логирования и регистрации-->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('loginPost') }}">{{ __('Login') }}</a>
@@ -38,6 +38,7 @@
                                 @endif
                             </li>
                         @else
+                    <!-- форма входа для авторизованных-->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

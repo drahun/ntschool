@@ -1,3 +1,5 @@
+<!--любой код из композера вида как код ниже он разделён на части-->
+
 @if (!empty($categories))
     <div class="widget-categories  push-down-30">
         <h6>РАЗДЕЛЫ-похожих статей</h6>

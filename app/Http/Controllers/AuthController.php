@@ -6,12 +6,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller{
     public function register(){
-        return view('layouts.one-column', [
-            'page' => 'widgets.registerform',
-            'title' => 'Регистрация в блоге',
-            'content' => '',
-            'activeMenu' => 'register',
-        ]);
+        $title = 'регистрация на сайте';
+        return view('widgets.registerform',compact('title'));
     }
     public function registerPost(){
         $this->validate($this->request, [
@@ -33,12 +29,8 @@ class AuthController extends Controller{
         return 'OK';
     }
     public function login(){
-        return view('layouts.one-column', [
-            'page' => 'widgets.login',
-            'title' => 'Вход в систему',
-            'content' => '<p>Привет, меня зовут Дмитрий Юрьев и я веб разработчик!</p>',
-            'activeMenu' => 'feedback',
-        ]);
+        $title = 'форма входа';
+        return view('widgets.login',compact('title'));
     }
     public function loginPost(){
         /*var_dump($this->request->all());
