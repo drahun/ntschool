@@ -22,7 +22,7 @@
 <!-- в доченем шаблоне переопределены nav,content,footer-->
 <!-- те если хотим вывести в наследнике корзину товаров переопределяем только content -->
         @yield('nav')
-
+        <!-- include('errors')-->
         @yield('content')
 
         @yield('footer')
