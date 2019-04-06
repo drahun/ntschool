@@ -52,7 +52,7 @@
                             <h6>Тэги</h6>
                             <hr>
                             @forelse($post->tags as $tag)
-                                <a href="{{ route('post.index', ['tag' => $tag->name]) }}" class="tags__link">{{ $tag->name }}</a>
+                                <a href="{{ route('tag.show', ['tag' => $tag->name]) }}" class="tags__link">{{ $tag->name }}</a>
                             @empty
                                 Пост не имеет тегов
                             @endforelse

@@ -46,4 +46,8 @@ class PostController extends Controller{
         return view('layouts.one-column',
             compact('post','title','page'));
     }
+
+    public function tags(){
+
+    }
 }

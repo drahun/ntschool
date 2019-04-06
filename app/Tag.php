@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 class Tag extends Model{
     use Sluggable;
-    protected $fillable =['title'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
     public function sluggable(){
         return [
             'slug' => [
@@ -19,8 +20,8 @@ class Tag extends Model{
         // модель Post, доп. таблица, где  id тега ссылается на id статьи,
             Post::class,
             'post_tags',
-            'tag_id',
-            'post_id');
+            'post_id',
+            'tag_id');
     }
 
 

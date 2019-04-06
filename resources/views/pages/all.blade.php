@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-xs-12  col-sm-7">
 
-                            <div class="meta__info">
-                                @foreach($post->categories as $category)
+                            <div class="meta__info"><i>Статья принадлежит категориям:</i>
+                            @foreach($post->categories as $category)
                                     {{$category->name}}:
                                 @endforeach
                             </div>

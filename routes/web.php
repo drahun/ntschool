@@ -4,6 +4,12 @@
  */
 Route::get('/', 'PostController@index')->name('post.index');;
 Route::get('post/{slug}', 'PostController@show')->name('post.show');
+
+/**
+ * роуты тегов
+ */
+
+Route::get('tag/{slug}', 'TagController@show')->name('tag.show');
 //Auth::routes();
 /**
  * Routes for register and login

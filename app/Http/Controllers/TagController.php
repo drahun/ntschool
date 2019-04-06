@@ -3,19 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller{
 
-    public function show($tag){
-            // ВСЕ ПОСТЫ ИЗ ЭТОЙ КАТЕГОРИИ
-            $tags = Tag::where('tag',$tag)->firstOrFail();
-            $posts = $tags->posts();
-            dump($posts);
+    public function show($slug){
 
-        $page ='pages.post';
+            // ВСЕ ПОСТЫ ИЗ ЭТОЙ КАТЕГОРИИ
+            //$tags = Tag::where('slug',$slug)->firstOrFail();
+        $tags = Tag::where('slug',$slug)->firstOrFail();
+        $past = $tags->posts()
+            ->wherePivot('created_at', '<', '2018-04-07')
+            ->get(); // execute the query
+          // dump($tags);
+
+        $page ='pages.tags';
         return view('layouts.one-column',
-            compact('posts','title','page'));
+            compact('tags','title','page'));
+
     }
     //
 }

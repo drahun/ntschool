@@ -2,6 +2,7 @@
 //Также вместо null можно указать категории abstract/animmals/buisness/cats/city/food/
 //nightlife/fashion/image/people/nature/sports/technics/transport (color image /gray image)
 use App\Post;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder,
     Carbon\Carbon;
 
@@ -28,7 +29,7 @@ class PostsTableSeeder extends Seeder{
                 'is_favorite' => $faker->numberBetween(0,1),
                 'user_id' => $faker->numberBetween(1,5),
             ]);
-            $postModel->slug = $postModel->id . ':' . str_slug($postModel->title, '-');
+            $postModel->slug = $postModel->id . ':' . Str::slug($postModel->title, '-');
             $postModel->save();
         }
     }

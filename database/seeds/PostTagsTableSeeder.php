@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Post;
-class PostsTagsTableSeeder extends Seeder{
+class PostTagsTableSeeder extends Seeder{
     public function run(){
         Post::find(1)->tags()->attach([1,2]);
         Post::find(2)->tags()->attach([2,3]);
