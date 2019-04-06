@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePostsTagsTable extends Migration{
     public function up(){
-        Schema::create('posts_tags', function (Blueprint $table) {
+        Schema::create('post_tags', function (Blueprint $table) {
             // $table->increments('id', true)->unsigned();
             $table->integer('post_id')->unsigned()->nullable();
             $table->integer('tag_id')->unsigned()->nullable();
